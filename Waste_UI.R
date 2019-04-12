@@ -7,6 +7,7 @@ server <- function(input, output) {
 }
 
 # Run the app ----
+#commit test text
 
 ui <- navbarPage("Waste Management in Armenia",
                  tabPanel("Overview"),
