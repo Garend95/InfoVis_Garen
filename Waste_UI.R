@@ -9,7 +9,7 @@ server <- function(input, output) {
 # Run the app ----
 
 ui <- navbarPage("Waste Management in Armenia",
-                 tabPanel("Summary"),
+                 tabPanel("Overview"),
                  navbarMenu("Data tables",
                             tabPanel("Quantity indicators and transportation"),
                             tabPanel("Waste generated in tons 2017"),
