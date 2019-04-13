@@ -27,6 +27,7 @@ ui <- navbarPage(theme = shinytheme("cerulean"), "Waste Management in Armenia",
                  
                  sliderInput("year_slider", h4("Choose year range"), min = 2013, max = 2017, value = c(2013,2017), step = NULL, round = FALSE
                             ),
+                 textInput("Years to exclude", "Type year to exclude"),
                  
                  
                    sidebarPanel(width = 3,
