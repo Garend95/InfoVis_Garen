@@ -12,9 +12,17 @@ waste_quantative_movement_by_classes_2017 <- read.csv(text = z)
 
 e <- getURL("https://raw.githubusercontent.com/Garend95/InfoVis_Garen/master/Waste_quantity_indicators_and_transportation_2017.csv")
 waste_transported2017 <- read.csv(text = e)
+waste_transported2017$Region <- gsub ("\\n","",waste_transported2017$Region)
 
 f <- getURL("https://raw.githubusercontent.com/Garend95/InfoVis_Garen/master/Waste_transported_to_municipal_landfills2017.csv")
 waste_transported_to_landfiils <- read.csv(text = f)
 
+marz1 <- which(waste_transported2017$Region %in% c("Yerevan city","Syunik"))
+datMod <- waste_transported2017[c(marz1),]
 
-ggplot(waste_transported2017, aes(x = waste_transported2017$Year)) + geom_bar(y = waste_transported2017$organization.Generated)
+
+agregTable <- aggregate(datMod$organization.Generated, by = list(datMod$Year), FUN = sum)
+agregTable$landfill <- aggregate(datMod$landfil.Transported, by = list(datMod$Year), FUN = sum)
+
+ggplot(datMod, aes(x = datMod$Year)) + geom_bar(aes(y = datMod$organization.Generated, fill = "red"), stat = "identity", position = "dodge") + 
+  geom_bar(aes(y = datMod$landfil.Transported, fill = "blue"),stat = "identity", position = "dodge")
