@@ -1,6 +1,7 @@
 library(RCurl)
 library(ggplot2)
-
+install.packages("reshape")
+library(reshape)
 x <- getURL("https://raw.githubusercontent.com/Garend95/InfoVis_Garen/master/Movement_of_industrial_waste2017%20(3).csv")
 waste_mnovement_2017 <- read.csv(text = x)
 
@@ -20,9 +21,10 @@ waste_transported_to_landfiils <- read.csv(text = f)
 marz1 <- which(waste_transported2017$Region %in% c("Yerevan city","Syunik"))
 datMod <- waste_transported2017[c(marz1),]
 
+transported2 <- waste_transported2017[,c(1,2,4,6)]
+transported2 <- melt(transported2, id.vars = c("Region","Year"), measure.vars = c("organization.Generated","landfil.Transported"))
 
 agregTable <- aggregate(datMod$organization.Generated, by = list(datMod$Year), FUN = sum)
 agregTable$landfill <- aggregate(datMod$landfil.Transported, by = list(datMod$Year), FUN = sum)
 
-ggplot(datMod, aes(x = datMod$Year)) + geom_bar(aes(y = datMod$organization.Generated, fill = "red"), stat = "identity", position = "dodge") + 
-  geom_bar(aes(y = datMod$landfil.Transported, fill = "blue"),stat = "identity", position = "dodge")
+ggplot(transported2, aes(x = Year, y = value, fill = variable)) + geom_bar(stat = "identity", position = "dodge")
