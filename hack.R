@@ -11,11 +11,10 @@ z <- getURL("https://github.com/Garend95/InfoVis_Garen/blob/master/Waste_quantit
 waste_quantative_movement_by_classes_2017 <- read.csv(text = z)
 
 e <- getURL("https://raw.githubusercontent.com/Garend95/InfoVis_Garen/master/Waste_quantity_indicators_and_transportation_2017.csv")
-waste_quantity_indicators_and_transportation_2017 <- read.csv(text = e)
+waste_transported2017 <- read.csv(text = e)
 
 f <- getURL("https://raw.githubusercontent.com/Garend95/InfoVis_Garen/master/Waste_transported_to_municipal_landfills2017.csv")
 waste_transported_to_landfiils <- read.csv(text = f)
 
-head(waste_transported_to_landfiils)
 
-ggplot(waste_transported_to_landfiils, aes())
+ggplot(waste_transported2017, aes(x = waste_transported2017$Year)) + geom_bar(y = waste_transported2017$organization.Generated)
