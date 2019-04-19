@@ -10,10 +10,18 @@ library("rgeos")
 library("maptools")
 #install.packages("shinydashboard")
 library("shinydashboard")
+library(RCurl)
+
+
+e <- getURL("https://raw.githubusercontent.com/Garend95/InfoVis_Garen/master/Waste_quantity_indicators_and_transportation_2017.csv")
+waste_transported2017 <- read.csv(text = e)
+waste_transported2017$Region <- gsub ("\\n","",waste_transported2017$Region)
+waste_transported2017$Year <- as.numeric(waste_transported2017$Year)
+
+transported2 <- waste_transported2017[,c(1,2,4,6)]
+transported2 <- melt(transported2, id.vars = c("Region","Year"), measure.vars = c("organization.Generated","landfil.Transported"))
+
 # Define server logic ----
-server <- function(input, output) {
-  
-}
 
 # Run the app ----
 
@@ -75,18 +83,29 @@ server <- function(input, output) {
         menuItem("Tables", tabName = "tables", icon = icon("table")),
         sliderInput("year_slider", h4("Choose year range"), min = 2013, max = 2017, value = c(2013,2017), step = NULL, round = FALSE),
         textInput("Years to exclude", "Type year to exclude"),
-        checkboxGroupInput("region", "Select Region", 
-                           choices = list("All Regions" = 1,
-                                          "Aragatsotn" = 2,
-                                          "Ararat" = 3,
-                                          "Armavir" = 4,
-                                          "Gegharkunik" = 5,
-                                          "Lori" = 6,
-                                          "Kotayk" = 7,
-                                          "Shirak" = 8,
-                                          "Syunik" = 9,
-                                          "Vayots Dzor" = 10,
-                                          "Yerevan city" = 11))
+        checkboxGroupInput("region", "Select Region", choices = c("All Regions",
+                              "Aragatsotn",
+                              "Ararat",
+                              "Armavir",
+                              "Gegharkunik",
+                              "Lori",
+                              "Kotayk",
+                              "Shirak",
+                              "Syunik",
+                              "Vayots Dzor",
+                              "Yerevan city",selected = "Ararat")
+                           # choices = list("All Regions" = 1,
+                           #                "Aragatsotn" = 2,
+                           #                "Ararat" = 3,
+                           #                "Armavir" = 4,
+                           #                "Gegharkunik" = 5,
+                           #                "Lori" = 6,
+                           #                "Kotayk" = 7,
+                           #                "Shirak" = 8,
+                           #                "Syunik" = 9,
+                           #                "Vayots Dzor" = 10,
+                           #                "Yerevan city" = 11))
+        )
       )
     ),
     dashboardBody(
@@ -98,8 +117,21 @@ server <- function(input, output) {
                     column(5, h4("Bar Chart"))
                   ),
                   fluidRow(
-                    column(3, infoBox("Testing stuff", 20, icon = icon("credit-card"), fill = TRUE)),
-                    column(5, h4("Time-Bound info"))
+                    
+                    box(width = 6,
+                      title = "Average waste statistics", status = "warning",
+                      valueBox(subtitle = tags$p("Tons per capita", style = "font-size: 100%;"),value = 20, width = 4, icon = icon("male"), color = "blue"),
+                      valueBox(subtitle = "Tons per square meter",value = 20, width = 4, icon = icon("weight-hanging"), color = "purple"),
+                      valueBox(subtitle = "Tons sent to landfills",value = 20, width = 4, icon = icon("circle"), color = "yellow")
+                    
+                              
+                    ),
+                    box(width = 6,
+                        title = "Waste quantity over time", status = "warning",
+                        textOutput("Timeseries")
+                        
+                        )
+                              
                   )
                 )     
                 ),
@@ -120,5 +152,13 @@ server <- function(input, output) {
       
     )
   )
+  
+  server <- function(input, output) {
+    output$Timeseries <- renderText({
+      
+      paste("you chose",c(input$year_slider[1]:input$year_slider[2]))
+    })
+  }
+  
   
   shinyApp(ui = ui, server = server)
