@@ -11,15 +11,14 @@ library("maptools")
 #install.packages("shinydashboard")
 library("shinydashboard")
 library(RCurl)
+library(plotly)
+library(reshape)
 
 
 e <- getURL("https://raw.githubusercontent.com/Garend95/InfoVis_Garen/master/Waste_quantity_indicators_and_transportation_2017.csv")
 waste_transported2017 <- read.csv(text = e)
 waste_transported2017$Region <- gsub ("\\n","",waste_transported2017$Region)
 waste_transported2017$Year <- as.numeric(waste_transported2017$Year)
-
-transported2 <- waste_transported2017[,c(1,2,4,6)]
-transported2 <- melt(transported2, id.vars = c("Region","Year"), measure.vars = c("organization.Generated","landfil.Transported"))
 
 # Define server logic ----
 
@@ -83,28 +82,19 @@ transported2 <- melt(transported2, id.vars = c("Region","Year"), measure.vars = 
         menuItem("Tables", tabName = "tables", icon = icon("table")),
         sliderInput("year_slider", h4("Choose year range"), min = 2013, max = 2017, value = c(2013,2017), step = NULL, round = FALSE),
         textInput("Years to exclude", "Type year to exclude"),
-        checkboxGroupInput("region", "Select Region", choices = c("All Regions",
-                              "Aragatsotn",
-                              "Ararat",
-                              "Armavir",
-                              "Gegharkunik",
-                              "Lori",
-                              "Kotayk",
-                              "Shirak",
-                              "Syunik",
-                              "Vayots Dzor",
-                              "Yerevan city",selected = "Ararat")
-                           # choices = list("All Regions" = 1,
-                           #                "Aragatsotn" = 2,
-                           #                "Ararat" = 3,
-                           #                "Armavir" = 4,
-                           #                "Gegharkunik" = 5,
-                           #                "Lori" = 6,
-                           #                "Kotayk" = 7,
-                           #                "Shirak" = 8,
-                           #                "Syunik" = 9,
-                           #                "Vayots Dzor" = 10,
-                           #                "Yerevan city" = 11))
+        checkboxGroupInput("region", "Select Region",  
+                           choices= list("All Regions" = "All Regions" ,
+                                          "Aragatsotn" = "Aragatsotn",
+                                          "Ararat" = "Ararat",
+                                          "Armavir" = "Armavir",
+                                          "Gegharkunik" = "Gegharkunik",
+                                          "Lori" = "Lori",
+                                          "Kotayk" = "Kotayk",
+                                          "Shirak" = "Shirak",
+                                          "Syunik" = "Syunik",
+                                          "Vayots Dzor" = "Vayots Dzor",
+                                          "Yerevan city" = "Yerevan city"),selected = "Kotayk"
+          
         )
       )
     ),
@@ -123,15 +113,18 @@ transported2 <- melt(transported2, id.vars = c("Region","Year"), measure.vars = 
                       valueBox(subtitle = tags$p("Tons per capita", style = "font-size: 100%;"),value = 20, width = 4, icon = icon("male"), color = "blue"),
                       valueBox(subtitle = "Tons per square meter",value = 20, width = 4, icon = icon("weight-hanging"), color = "purple"),
                       valueBox(subtitle = "Tons sent to landfills",value = 20, width = 4, icon = icon("circle"), color = "yellow")
-                    
+                      
                               
                     ),
                     box(width = 6,
                         title = "Waste quantity over time", status = "warning",
-                        textOutput("Timeseries")
-                        
+                        plotOutput("Timeseries"),
+                        textOutput("chosenRegions")
                         )
                               
+                  ),
+                  fluidRow(
+                    datatable(transported2)
                   )
                 )     
                 ),
@@ -154,11 +147,30 @@ transported2 <- melt(transported2, id.vars = c("Region","Year"), measure.vars = 
   )
   
   server <- function(input, output) {
-    output$Timeseries <- renderText({
+    output$Timeseries <- renderPlot({
+      transported2 <- waste_transported2017[,c(1,2,4,6)]
+      transported2 <- melt(transported2, id.vars = c("Region","Year"), measure.vars = c("organization.Generated","landfil.Transported"))
       
-      paste("you chose",c(input$year_slider[1]:input$year_slider[2]))
+      # transported2 <- ifelse(test = is.element("All Regions", c(input$region)),yes = transported2, no = transported2[transported2$Region %in% c(input$region),])
+      
+      if(!is.element("All Regions", c(input$region))) {
+        transported2 <- transported2[transported2$Region %in% c(input$region),]
+      } 
+      
+      transported2 <- transported2[transported2$Year %in% c(input$year_slider[1]:input$year_slider[2]),]
+      agregTable <- aggregate(transported2$value, by = list(transported2$Year, transported2$variable), FUN = sum)
+      colnames(agregTable) <- c("Year", "Category", "Total_waste")
+
+      x <- ggplot(agregTable, aes(x = Year, y = Total_waste/1000000, fill = Category)) +
+       geom_bar(stat = "identity", position = "stack" ) +
+       scale_x_continuous(breaks=agregTable$Year)
+     x
+
+    })
+    output$chosenRegions <- renderText({
+      print("Regions: ")
+      paste(c(input$region), collapse = ", ")
     })
   }
-  
-  
+
   shinyApp(ui = ui, server = server)
