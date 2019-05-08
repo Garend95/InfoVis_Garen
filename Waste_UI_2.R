@@ -78,8 +78,8 @@ wasteClass <- read.csv(text = c)
                   fluidRow(
                     
                     
-                      box(width = 6,
-                      title = "Transportation and treatment", status = "warning",
+                      box(width = 12,
+                      title = "Waste quantities transported, treated or otherwise", status = "warning",
                       plotlyOutput("WasteTransAndTreatment"),
                       prettyCheckboxGroup("categSelect",label = "Choose categories",choices =  list("Waste received from other organizations" = "Waste received from other organizations",
                                                                                                     "Waste transmitted to other organizations" = "Waste transmitted to other organizations",
@@ -98,12 +98,12 @@ wasteClass <- read.csv(text = c)
                       # valueBox(subtitle = "Tons sent to landfills",value = 20, width = 4, icon = icon("circle"), color = "yellow")
                      
                               
-                    ),
-                    box(width = 6, height = 375,
-                        title = "Waste Generated Over Time", status = "warning",
-                        plotlyOutput("TotalGenWaste"),
-                        textOutput("chosenRegions")
-                        )
+                    )
+                    # box(width = 6, height = 375,
+                    #     title = "Waste Generated Over Time", status = "warning",
+                    #     plotlyOutput("TotalGenWaste"),
+                    #     textOutput("chosenRegions")
+                    #     )
                               
                   ),
                   fluidRow(
@@ -197,7 +197,7 @@ wasteClass <- read.csv(text = c)
       
       agregTable <- aggregate(agregTable$Quantity, by = list(agregTable$Year, agregTable$Category), FUN = sum)
       colnames(agregTable) <- c("Year", "Category", "Quantity")
-      
+      agregTable$Quantity <- round(agregTable$Quantity/100)
       
        print(
          ggplotly(height = 400,
@@ -206,7 +206,7 @@ wasteClass <- read.csv(text = c)
                              aes(x = Year , y = Quantity, fill = Category),
                              width = 0.2, color = "grey", size = 0.3) + 
                     geom_col(data = agregTable %>% filter(Category == "Waste generated during the year"),
-                             aes(x = Year - 0.2, y = Quantity),
+                             aes(x = Year - 0.2, y = Quantity, fill = Category),
                              width = 0.2, color = "grey", size = 0.3) +
                     
           scale_x_continuous(breaks=agregTable$Year) +
@@ -215,12 +215,15 @@ wasteClass <- read.csv(text = c)
                 axis.text.x = element_text(family = "Verdana",
                                            face = "plain"),
                 axis.text.y = element_text(family = "verdana",
-                                           face = "plain"
+                                           face = "plain"),
+                panel.background = element_rect(fill = "white"),
+                panel.grid.major = element_blank(), 
+                panel.grid.minor = element_blank()
+                                       
                                            
-                                          )
+                                          
                 
-                  ) +
-          scale_fill_manual(values=wes_palette(n = 5, name="Rushmore1"))
+                  ) 
          
         
         )
@@ -228,52 +231,52 @@ wasteClass <- read.csv(text = c)
     })
     
     
-    output$TotalGenWaste <- renderPlotly({
-      transported2 <- waste_transported2017[-c(111),c(1:8)]
-      transported2 <- melt(transported2, id.vars = c("Region","Year"), measure.vars = c("Waste.received.from.other.organizations",
-                                                                                        "Waste.generated.during.the.year",
-                                                                                        "Waste.transmitted.to.other.organizations",
-                                                                                        "Treated.and.destructed.by.other.organizations",
-                                                                                        "Waste.used.by.organizations",
-                                                                                        "Transported.to.landfills.by.means.of.organizations"))
-      transported2$value <- as.character(transported2$value)
-      transported2$value <- gsub(" ",replacement = "",x = transported2$value)
-      transported2$value <- gsub("-",replacement = "0",x = transported2$value)
-      transported2$variable <- as.character(transported2$variable)
-      transported2$variable <- gsub("\\.",replacement = " ",x = transported2$variable)
-      transported2$value <- as.double(transported2$value)
-      
-      # transported2 <- ifelse(test = is.element("All Regions", c(input$region)),yes = transported2, no = transported2[transported2$Region %in% c(input$region),])
-      
-      if(input$allreg > 0) {
-        transported2 <- transported2[transported2$Region %in% c(input$region) ,]
-      } 
-      
-      transported2 <- transported2[transported2$Year %in% c(input$year_slider[1]:input$year_slider[2]),]
-      agregTable <- aggregate(transported2$value, by = list(transported2$Year, transported2$Region, transported2$variable), FUN = sum)
-      colnames(agregTable) <- c("Year", "Region", "Category", "Quantity")
+    # output$TotalGenWaste <- renderPlotly({
+    #   transported2 <- waste_transported2017[-c(111),c(1:8)]
+    #   transported2 <- melt(transported2, id.vars = c("Region","Year"), measure.vars = c("Waste.received.from.other.organizations",
+    #                                                                                     "Waste.generated.during.the.year",
+    #                                                                                     "Waste.transmitted.to.other.organizations",
+    #                                                                                     "Treated.and.destructed.by.other.organizations",
+    #                                                                                     "Waste.used.by.organizations",
+    #                                                                                     "Transported.to.landfills.by.means.of.organizations"))
+    #   transported2$value <- as.character(transported2$value)
+    #   transported2$value <- gsub(" ",replacement = "",x = transported2$value)
+    #   transported2$value <- gsub("-",replacement = "0",x = transported2$value)
+    #   transported2$variable <- as.character(transported2$variable)
+    #   transported2$variable <- gsub("\\.",replacement = " ",x = transported2$variable)
+    #   transported2$value <- as.double(transported2$value)
+    #   
+    #   # transported2 <- ifelse(test = is.element("All Regions", c(input$region)),yes = transported2, no = transported2[transported2$Region %in% c(input$region),])
+    #   
+    #   if(input$allreg > 0) {
+    #     transported2 <- transported2[transported2$Region %in% c(input$region) ,]
+    #   } 
+    #   
+    #   transported2 <- transported2[transported2$Year %in% c(input$year_slider[1]:input$year_slider[2]),]
+    #   agregTable <- aggregate(transported2$value, by = list(transported2$Year, transported2$Region, transported2$variable), FUN = sum)
+    #   colnames(agregTable) <- c("Year", "Region", "Category", "Quantity")
+    # 
+    #   print(
+    #     ggplotly(height = 300,
+    #       ggplot(agregTable[agregTable$Category %in% c("Waste generated during the year"),], aes(x = Year, y = Quantity/1000)) +
+    #       geom_bar(stat = "identity", position = "stack") +
+    #       scale_x_continuous(breaks=agregTable$Year) +
+    #         ylab("Waste amount (in 1000 tons)") + 
+    #         theme(legend.position = "none",
+    #               axis.text.x = element_text(family = "Verdana",
+    #                                          face = "plain"),
+    #               axis.text.y = element_text(family = "verdana",
+    #                                          face = "plain"),
+    #               panel.background = element_rect(fill = "white"),
+    #               panel.grid.major = element_line(size = 0.5, linetype = 'solid',
+    #                                               colour = "grey")
+    #               
+    #               
+    #         ) 
+    #     )
+    #   )
 
-      print(
-        ggplotly(height = 300,
-          ggplot(agregTable[agregTable$Category %in% c("Waste generated during the year"),], aes(x = Year, y = Quantity/1000)) +
-          geom_bar(stat = "identity", position = "stack") +
-          scale_x_continuous(breaks=agregTable$Year) +
-            ylab("Waste amount (in 1000 tons)") + 
-            theme(legend.position = "none",
-                  axis.text.x = element_text(family = "Verdana",
-                                             face = "plain"),
-                  axis.text.y = element_text(family = "verdana",
-                                             face = "plain"),
-                  panel.background = element_rect(fill = "white"),
-                  panel.grid.major = element_line(size = 0.5, linetype = 'solid',
-                                                  colour = "grey")
-                  
-                  
-            ) 
-        )
-      )
-
-    })
+    # })
     
     output$Classification <- renderPlotly({
       classFiltered <- wasteClass[wasteClass$Region %in% c(input$region) ,]
