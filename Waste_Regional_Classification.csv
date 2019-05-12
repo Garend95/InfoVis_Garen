@@ -1,56 +1,506 @@
-Region,Class,Waste generated in tons
-Yerevan city,1-st,213
-Yerevan city,2-nd,814
-Yerevan city,3-rd,725
-Yerevan city,4-th,862
-Yerevan city,5-th,497
-Aragatsotn,1-st,819
-Aragatsotn,2-nd,463
-Aragatsotn,3-rd,616
-Aragatsotn,4-th,642
-Aragatsotn,5-th,831
-Ararat,1-st,757
-Ararat,2-nd,72
-Ararat,3-rd,768
-Ararat,4-th,502
-Ararat,5-th,240
-Armavir,1-st,926
-Armavir,2-nd,408
-Armavir,3-rd,617
-Armavir,4-th,610
-Armavir,5-th,467
-Gegharkunik,1-st,778
-Gegharkunik,2-nd,638
-Gegharkunik,3-rd,291
-Gegharkunik,4-th,194
-Gegharkunik,5-th,234
-Lori,1-st,908
-Lori,2-nd,872
-Lori,3-rd,125
-Lori,4-th,540
-Lori,5-th,610
-Kotayk,1-st,333
-Kotayk,2-nd,468
-Kotayk,3-rd,865
-Kotayk,4-th,100
-Kotayk,5-th,508
-Shirak,1-st,713
-Shirak,2-nd,360
-Shirak,3-rd,414
-Shirak,4-th,119
-Shirak,5-th,741
-Syunik,1-st,322
-Syunik,2-nd,947
-Syunik,3-rd,749
-Syunik,4-th,692
-Syunik,5-th,950
-Vayots Dzor,1-st,505
-Vayots Dzor,2-nd,630
-Vayots Dzor,3-rd,499
-Vayots Dzor,4-th,957
-Vayots Dzor,5-th,539
-Yerevan city,1-st,940
-Yerevan city,2-nd,740
-Yerevan city,3-rd,477
-Yerevan city,4-th,250
-Yerevan city,5-th,947
+Region,Class,Waste generated in tons,Year
+Aragatsotn,1-st,819,2008
+Aragatsotn,2-nd,463,2008
+Aragatsotn,3-rd,616,2008
+Aragatsotn,4-th,642,2008
+Aragatsotn,5-th,831,2008
+Ararat,1-st,757,2008
+Ararat,2-nd,72,2008
+Ararat,3-rd,768,2008
+Ararat,4-th,502,2008
+Ararat,5-th,240,2008
+Armavir,1-st,926,2008
+Armavir,2-nd,408,2008
+Armavir,3-rd,617,2008
+Armavir,4-th,610,2008
+Armavir,5-th,467,2008
+Gegharkunik,1-st,778,2008
+Gegharkunik,2-nd,638,2008
+Gegharkunik,3-rd,291,2008
+Gegharkunik,4-th,194,2008
+Gegharkunik,5-th,234,2008
+Lori,1-st,908,2008
+Lori,2-nd,872,2008
+Lori,3-rd,125,2008
+Lori,4-th,540,2008
+Lori,5-th,610,2008
+Kotayk,1-st,333,2008
+Kotayk,2-nd,468,2008
+Kotayk,3-rd,865,2008
+Kotayk,4-th,100,2008
+Kotayk,5-th,508,2008
+Shirak,1-st,713,2008
+Shirak,2-nd,360,2008
+Shirak,3-rd,414,2008
+Shirak,4-th,119,2008
+Shirak,5-th,741,2008
+Syunik,1-st,322,2008
+Syunik,2-nd,947,2008
+Syunik,3-rd,749,2008
+Syunik,4-th,692,2008
+Syunik,5-th,950,2008
+Tavush,1-st,213,2008
+Tavush,2-nd,437,2008
+Tavush,3-rd,687,2008
+Tavush,4-th,239,2008
+Tavush,5-th,477,2008
+Vayots Dzor,1-st,702,2008
+Vayots Dzor,2-nd,111,2008
+Vayots Dzor,3-rd,645,2008
+Vayots Dzor,4-th,571,2008
+Vayots Dzor,5-th,590,2008
+Yerevan city,1-st,244,2008
+Yerevan city,2-nd,694,2008
+Yerevan city,3-rd,277,2008
+Yerevan city,4-th,927,2008
+Yerevan city,5-th,642,2008
+Aragatsotn,1-st,843,2009
+Aragatsotn,2-nd,385,2009
+Aragatsotn,3-rd,644,2009
+Aragatsotn,4-th,629,2009
+Aragatsotn,5-th,526,2009
+Ararat,1-st,336,2009
+Ararat,2-nd,705,2009
+Ararat,3-rd,34,2009
+Ararat,4-th,466,2009
+Ararat,5-th,661,2009
+Armavir,1-st,0,2009
+Armavir,2-nd,841,2009
+Armavir,3-rd,205,2009
+Armavir,4-th,735,2009
+Armavir,5-th,950,2009
+Gegharkunik,1-st,29,2009
+Gegharkunik,2-nd,972,2009
+Gegharkunik,3-rd,260,2009
+Gegharkunik,4-th,316,2009
+Gegharkunik,5-th,258,2009
+Lori,1-st,432,2009
+Lori,2-nd,401,2009
+Lori,3-rd,787,2009
+Lori,4-th,238,2009
+Lori,5-th,832,2009
+Kotayk,1-st,252,2009
+Kotayk,2-nd,870,2009
+Kotayk,3-rd,269,2009
+Kotayk,4-th,860,2009
+Kotayk,5-th,599,2009
+Shirak,1-st,159,2009
+Shirak,2-nd,917,2009
+Shirak,3-rd,781,2009
+Shirak,4-th,198,2009
+Shirak,5-th,2,2009
+Syunik,1-st,894,2009
+Syunik,2-nd,186,2009
+Syunik,3-rd,375,2009
+Syunik,4-th,336,2009
+Syunik,5-th,775,2009
+Vayots Dzor,1-st,763,2009
+Vayots Dzor,2-nd,158,2009
+Vayots Dzor,3-rd,533,2009
+Vayots Dzor,4-th,560,2009
+Vayots Dzor,5-th,891,2009
+Yerevan city,1-st,722,2009
+Yerevan city,2-nd,127,2009
+Yerevan city,3-rd,224,2009
+Yerevan city,4-th,983,2009
+Yerevan city,5-th,942,2009
+Aragatsotn,1-st,472,2010
+Aragatsotn,2-nd,669,2010
+Aragatsotn,3-rd,913,2010
+Aragatsotn,4-th,134,2010
+Aragatsotn,5-th,902,2010
+Ararat,1-st,685,2010
+Ararat,2-nd,570,2010
+Ararat,3-rd,586,2010
+Ararat,4-th,547,2010
+Ararat,5-th,221,2010
+Armavir,1-st,355,2010
+Armavir,2-nd,804,2010
+Armavir,3-rd,348,2010
+Armavir,4-th,328,2010
+Armavir,5-th,167,2010
+Gegharkunik,1-st,743,2010
+Gegharkunik,2-nd,947,2010
+Gegharkunik,3-rd,166,2010
+Gegharkunik,4-th,800,2010
+Gegharkunik,5-th,10,2010
+Lori,1-st,537,2010
+Lori,2-nd,541,2010
+Lori,3-rd,270,2010
+Lori,4-th,351,2010
+Lori,5-th,329,2010
+Kotayk,1-st,388,2010
+Kotayk,2-nd,730,2010
+Kotayk,3-rd,646,2010
+Kotayk,4-th,315,2010
+Kotayk,5-th,310,2010
+Shirak,1-st,817,2010
+Shirak,2-nd,384,2010
+Shirak,3-rd,25,2010
+Shirak,4-th,289,2010
+Shirak,5-th,305,2010
+Syunik,1-st,902,2010
+Syunik,2-nd,456,2010
+Syunik,3-rd,814,2010
+Syunik,4-th,82,2010
+Syunik,5-th,878,2010
+Vayots Dzor,1-st,216,2010
+Vayots Dzor,2-nd,52,2010
+Vayots Dzor,3-rd,455,2010
+Vayots Dzor,4-th,166,2010
+Vayots Dzor,5-th,398,2010
+Yerevan city,1-st,302,2010
+Yerevan city,2-nd,239,2010
+Yerevan city,3-rd,836,2010
+Yerevan city,4-th,873,2010
+Yerevan city,5-th,511,2010
+Aragatsotn,1-st,732,2011
+Aragatsotn,2-nd,126,2011
+Aragatsotn,3-rd,880,2011
+Aragatsotn,4-th,23,2011
+Aragatsotn,5-th,40,2011
+Ararat,1-st,875,2011
+Ararat,2-nd,859,2011
+Ararat,3-rd,434,2011
+Ararat,4-th,689,2011
+Ararat,5-th,126,2011
+Armavir,1-st,356,2011
+Armavir,2-nd,580,2011
+Armavir,3-rd,433,2011
+Armavir,4-th,648,2011
+Armavir,5-th,553,2011
+Gegharkunik,1-st,322,2011
+Gegharkunik,2-nd,332,2011
+Gegharkunik,3-rd,242,2011
+Gegharkunik,4-th,188,2011
+Gegharkunik,5-th,733,2011
+Lori,1-st,905,2011
+Lori,2-nd,5,2011
+Lori,3-rd,671,2011
+Lori,4-th,329,2011
+Lori,5-th,613,2011
+Kotayk,1-st,233,2011
+Kotayk,2-nd,344,2011
+Kotayk,3-rd,444,2011
+Kotayk,4-th,927,2011
+Kotayk,5-th,44,2011
+Shirak,1-st,927,2011
+Shirak,2-nd,92,2011
+Shirak,3-rd,407,2011
+Shirak,4-th,283,2011
+Shirak,5-th,987,2011
+Syunik,1-st,72,2011
+Syunik,2-nd,231,2011
+Syunik,3-rd,591,2011
+Syunik,4-th,665,2011
+Syunik,5-th,328,2011
+Vayots Dzor,1-st,274,2011
+Vayots Dzor,2-nd,266,2011
+Vayots Dzor,3-rd,470,2011
+Vayots Dzor,4-th,880,2011
+Vayots Dzor,5-th,479,2011
+Yerevan city,1-st,766,2011
+Yerevan city,2-nd,90,2011
+Yerevan city,3-rd,888,2011
+Yerevan city,4-th,592,2011
+Yerevan city,5-th,303,2011
+Aragatsotn,1-st,50,2012
+Aragatsotn,2-nd,551,2012
+Aragatsotn,3-rd,41,2012
+Aragatsotn,4-th,101,2012
+Aragatsotn,5-th,71,2012
+Ararat,1-st,839,2012
+Ararat,2-nd,540,2012
+Ararat,3-rd,216,2012
+Ararat,4-th,279,2012
+Ararat,5-th,96,2012
+Armavir,1-st,789,2012
+Armavir,2-nd,988,2012
+Armavir,3-rd,253,2012
+Armavir,4-th,824,2012
+Armavir,5-th,505,2012
+Gegharkunik,1-st,472,2012
+Gegharkunik,2-nd,963,2012
+Gegharkunik,3-rd,95,2012
+Gegharkunik,4-th,161,2012
+Gegharkunik,5-th,711,2012
+Lori,1-st,458,2012
+Lori,2-nd,328,2012
+Lori,3-rd,275,2012
+Lori,4-th,281,2012
+Lori,5-th,522,2012
+Kotayk,1-st,301,2012
+Kotayk,2-nd,981,2012
+Kotayk,3-rd,443,2012
+Kotayk,4-th,854,2012
+Kotayk,5-th,235,2012
+Shirak,1-st,329,2012
+Shirak,2-nd,532,2012
+Shirak,3-rd,334,2012
+Shirak,4-th,30,2012
+Shirak,5-th,322,2012
+Syunik,1-st,678,2012
+Syunik,2-nd,946,2012
+Syunik,3-rd,445,2012
+Syunik,4-th,150,2012
+Syunik,5-th,243,2012
+Vayots Dzor,1-st,868,2012
+Vayots Dzor,2-nd,535,2012
+Vayots Dzor,3-rd,355,2012
+Vayots Dzor,4-th,25,2012
+Vayots Dzor,5-th,596,2012
+Yerevan city,1-st,784,2012
+Yerevan city,2-nd,562,2012
+Yerevan city,3-rd,896,2012
+Yerevan city,4-th,321,2012
+Yerevan city,5-th,415,2012
+Aragatsotn,1-st,463,2013
+Aragatsotn,2-nd,767,2013
+Aragatsotn,3-rd,126,2013
+Aragatsotn,4-th,754,2013
+Aragatsotn,5-th,615,2013
+Ararat,1-st,401,2013
+Ararat,2-nd,870,2013
+Ararat,3-rd,655,2013
+Ararat,4-th,853,2013
+Ararat,5-th,547,2013
+Armavir,1-st,708,2013
+Armavir,2-nd,318,2013
+Armavir,3-rd,628,2013
+Armavir,4-th,355,2013
+Armavir,5-th,130,2013
+Gegharkunik,1-st,474,2013
+Gegharkunik,2-nd,821,2013
+Gegharkunik,3-rd,921,2013
+Gegharkunik,4-th,475,2013
+Gegharkunik,5-th,408,2013
+Lori,1-st,201,2013
+Lori,2-nd,872,2013
+Lori,3-rd,455,2013
+Lori,4-th,802,2013
+Lori,5-th,156,2013
+Kotayk,1-st,467,2013
+Kotayk,2-nd,188,2013
+Kotayk,3-rd,911,2013
+Kotayk,4-th,464,2013
+Kotayk,5-th,535,2013
+Shirak,1-st,676,2013
+Shirak,2-nd,92,2013
+Shirak,3-rd,652,2013
+Shirak,4-th,6,2013
+Shirak,5-th,388,2013
+Syunik,1-st,860,2013
+Syunik,2-nd,33,2013
+Syunik,3-rd,260,2013
+Syunik,4-th,571,2013
+Syunik,5-th,919,2013
+Vayots Dzor,1-st,82,2013
+Vayots Dzor,2-nd,252,2013
+Vayots Dzor,3-rd,1000,2013
+Vayots Dzor,4-th,943,2013
+Vayots Dzor,5-th,501,2013
+Yerevan city,1-st,365,2013
+Yerevan city,2-nd,6,2013
+Yerevan city,3-rd,503,2013
+Yerevan city,4-th,666,2013
+Yerevan city,5-th,742,2013
+Aragatsotn,1-st,758,2014
+Aragatsotn,2-nd,999,2014
+Aragatsotn,3-rd,884,2014
+Aragatsotn,4-th,770,2014
+Aragatsotn,5-th,63,2014
+Ararat,1-st,320,2014
+Ararat,2-nd,24,2014
+Ararat,3-rd,389,2014
+Ararat,4-th,925,2014
+Ararat,5-th,764,2014
+Armavir,1-st,189,2014
+Armavir,2-nd,529,2014
+Armavir,3-rd,284,2014
+Armavir,4-th,604,2014
+Armavir,5-th,364,2014
+Gegharkunik,1-st,161,2014
+Gegharkunik,2-nd,219,2014
+Gegharkunik,3-rd,636,2014
+Gegharkunik,4-th,575,2014
+Gegharkunik,5-th,956,2014
+Lori,1-st,988,2014
+Lori,2-nd,443,2014
+Lori,3-rd,930,2014
+Lori,4-th,869,2014
+Lori,5-th,907,2014
+Kotayk,1-st,79,2014
+Kotayk,2-nd,814,2014
+Kotayk,3-rd,289,2014
+Kotayk,4-th,163,2014
+Kotayk,5-th,872,2014
+Shirak,1-st,451,2014
+Shirak,2-nd,734,2014
+Shirak,3-rd,186,2014
+Shirak,4-th,481,2014
+Shirak,5-th,263,2014
+Syunik,1-st,579,2014
+Syunik,2-nd,728,2014
+Syunik,3-rd,799,2014
+Syunik,4-th,895,2014
+Syunik,5-th,718,2014
+Vayots Dzor,1-st,743,2014
+Vayots Dzor,2-nd,539,2014
+Vayots Dzor,3-rd,626,2014
+Vayots Dzor,4-th,388,2014
+Vayots Dzor,5-th,601,2014
+Yerevan city,1-st,835,2014
+Yerevan city,2-nd,624,2014
+Yerevan city,3-rd,804,2014
+Yerevan city,4-th,248,2014
+Yerevan city,5-th,285,2014
+Aragatsotn,1-st,676,2015
+Aragatsotn,2-nd,207,2015
+Aragatsotn,3-rd,284,2015
+Aragatsotn,4-th,614,2015
+Aragatsotn,5-th,145,2015
+Ararat,1-st,51,2015
+Ararat,2-nd,50,2015
+Ararat,3-rd,36,2015
+Ararat,4-th,527,2015
+Ararat,5-th,859,2015
+Armavir,1-st,693,2015
+Armavir,2-nd,740,2015
+Armavir,3-rd,963,2015
+Armavir,4-th,20,2015
+Armavir,5-th,359,2015
+Gegharkunik,1-st,154,2015
+Gegharkunik,2-nd,215,2015
+Gegharkunik,3-rd,951,2015
+Gegharkunik,4-th,128,2015
+Gegharkunik,5-th,993,2015
+Lori,1-st,477,2015
+Lori,2-nd,168,2015
+Lori,3-rd,859,2015
+Lori,4-th,295,2015
+Lori,5-th,661,2015
+Kotayk,1-st,952,2015
+Kotayk,2-nd,480,2015
+Kotayk,3-rd,637,2015
+Kotayk,4-th,64,2015
+Kotayk,5-th,107,2015
+Shirak,1-st,255,2015
+Shirak,2-nd,466,2015
+Shirak,3-rd,658,2015
+Shirak,4-th,845,2015
+Shirak,5-th,364,2015
+Syunik,1-st,350,2015
+Syunik,2-nd,184,2015
+Syunik,3-rd,690,2015
+Syunik,4-th,18,2015
+Syunik,5-th,214,2015
+Vayots Dzor,1-st,729,2015
+Vayots Dzor,2-nd,529,2015
+Vayots Dzor,3-rd,57,2015
+Vayots Dzor,4-th,708,2015
+Vayots Dzor,5-th,724,2015
+Yerevan city,1-st,374,2015
+Yerevan city,2-nd,195,2015
+Yerevan city,3-rd,539,2015
+Yerevan city,4-th,507,2015
+Yerevan city,5-th,300,2015
+Aragatsotn,1-st,467,2016
+Aragatsotn,2-nd,874,2016
+Aragatsotn,3-rd,688,2016
+Aragatsotn,4-th,446,2016
+Aragatsotn,5-th,723,2016
+Ararat,1-st,77,2016
+Ararat,2-nd,210,2016
+Ararat,3-rd,593,2016
+Ararat,4-th,114,2016
+Ararat,5-th,489,2016
+Armavir,1-st,46,2016
+Armavir,2-nd,827,2016
+Armavir,3-rd,870,2016
+Armavir,4-th,0,2016
+Armavir,5-th,571,2016
+Gegharkunik,1-st,550,2016
+Gegharkunik,2-nd,790,2016
+Gegharkunik,3-rd,755,2016
+Gegharkunik,4-th,823,2016
+Gegharkunik,5-th,983,2016
+Lori,1-st,539,2016
+Lori,2-nd,645,2016
+Lori,3-rd,716,2016
+Lori,4-th,755,2016
+Lori,5-th,692,2016
+Kotayk,1-st,915,2016
+Kotayk,2-nd,46,2016
+Kotayk,3-rd,134,2016
+Kotayk,4-th,32,2016
+Kotayk,5-th,746,2016
+Shirak,1-st,856,2016
+Shirak,2-nd,507,2016
+Shirak,3-rd,236,2016
+Shirak,4-th,404,2016
+Shirak,5-th,183,2016
+Syunik,1-st,145,2016
+Syunik,2-nd,122,2016
+Syunik,3-rd,95,2016
+Syunik,4-th,779,2016
+Syunik,5-th,261,2016
+Vayots Dzor,1-st,755,2016
+Vayots Dzor,2-nd,89,2016
+Vayots Dzor,3-rd,390,2016
+Vayots Dzor,4-th,874,2016
+Vayots Dzor,5-th,333,2016
+Yerevan city,1-st,912,2016
+Yerevan city,2-nd,52,2016
+Yerevan city,3-rd,168,2016
+Yerevan city,4-th,649,2016
+Yerevan city,5-th,383,2016
+Aragatsotn,1-st,958,2017
+Aragatsotn,2-nd,816,2017
+Aragatsotn,3-rd,464,2017
+Aragatsotn,4-th,522,2017
+Aragatsotn,5-th,831,2017
+Ararat,1-st,311,2017
+Ararat,2-nd,926,2017
+Ararat,3-rd,550,2017
+Ararat,4-th,619,2017
+Ararat,5-th,781,2017
+Armavir,1-st,587,2017
+Armavir,2-nd,435,2017
+Armavir,3-rd,93,2017
+Armavir,4-th,844,2017
+Armavir,5-th,612,2017
+Gegharkunik,1-st,533,2017
+Gegharkunik,2-nd,882,2017
+Gegharkunik,3-rd,536,2017
+Gegharkunik,4-th,698,2017
+Gegharkunik,5-th,378,2017
+Lori,1-st,379,2017
+Lori,2-nd,756,2017
+Lori,3-rd,248,2017
+Lori,4-th,105,2017
+Lori,5-th,196,2017
+Kotayk,1-st,770,2017
+Kotayk,2-nd,403,2017
+Kotayk,3-rd,649,2017
+Kotayk,4-th,235,2017
+Kotayk,5-th,777,2017
+Shirak,1-st,397,2017
+Shirak,2-nd,322,2017
+Shirak,3-rd,650,2017
+Shirak,4-th,158,2017
+Shirak,5-th,200,2017
+Syunik,1-st,754,2017
+Syunik,2-nd,538,2017
+Syunik,3-rd,667,2017
+Syunik,4-th,232,2017
+Syunik,5-th,929,2017
+Vayots Dzor,1-st,772,2017
+Vayots Dzor,2-nd,621,2017
+Vayots Dzor,3-rd,124,2017
+Vayots Dzor,4-th,274,2017
+Vayots Dzor,5-th,382,2017
+Yerevan city,1-st,696,2017
+Yerevan city,2-nd,675,2017
+Yerevan city,3-rd,81,2017
+Yerevan city,4-th,646,2017
+Yerevan city,5-th,400,2017
